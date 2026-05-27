@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornadas sem segundos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="panel">
+      <div class="intro">
+        <p class="eyebrow">Tratamento mensal de motoristas</p>
+        <h1>Jornadas sem segundos</h1>
+        <p>
+          Envie a planilha mensal, processe a aba <strong>Jornadas</strong> e baixe um novo arquivo mantendo todas as abas, linhas e colunas. A única alteração é remover os segundos dos horários e durações.
+        </p>
+      </div>
+
+      <div id="dropArea" class="upload-area" tabindex="0" role="button" aria-label="Selecionar planilha Excel">
+        <input id="fileInput" type="file" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel">
+        <div class="upload-icon" aria-hidden="true">XLS</div>
+        <div>
+          <strong>Arraste a planilha aqui</strong>
+          <span>ou clique para selecionar um arquivo .xlsx ou .xls</span>
+        </div>
+      </div>
+
+      <div class="file-row">
+        <span>Arquivo carregado:</span>
+        <strong id="fileName">Nenhum arquivo selecionado</strong>
+      </div>
+
+      <div id="statusMessage" class="status-message" aria-live="polite"></div>
+
+      <div class="actions">
+        <button id="processButton" class="button primary" type="button" disabled>Processar planilha</button>
+        <button id="downloadButton" class="button secondary" type="button" disabled>Baixar planilha final</button>
+      </div>
+    </section>
+
+    <section class="results-grid" aria-label="Resumo do processamento">
+      <article class="stat-card">
+        <span>Aba processada</span>
+        <strong id="statSheet">-</strong>
+      </article>
+      <article class="stat-card">
+        <span>Linhas</span>
+        <strong id="statRows">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Colunas</span>
+        <strong id="statColumns">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Células corrigidas</span>
+        <strong id="statChanges">0</strong>
+      </article>
+    </section>
+
+    <section id="alertsBox" class="alerts" aria-live="polite"></section>
+
+    <section class="preview-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Pré-visualização</p>
+          <h2>Primeiras 20 linhas</h2>
+        </div>
+        <span id="previewHint">Processando a aba escolhida</span>
+      </div>
+      <div id="previewContainer" class="table-wrap">
+        <div class="empty-preview">A prévia aparecerá aqui depois do processamento.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
