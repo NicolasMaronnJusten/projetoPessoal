@@ -2,29 +2,6 @@
 
 Projeto web estático para tratar uma planilha mensal de jornada de motoristas. Ele lê uma planilha Excel, localiza a aba `Jornadas` e remove os segundos de células que contenham horários ou durações, mantendo a estrutura da planilha.
 
-## Como abrir
-
-Abra o arquivo `index.html` diretamente no navegador. Não é necessário backend, servidor local, React, Vue, Angular ou instalação de pacotes.
-
-O projeto usa bibliotecas via CDN:
-
-- ExcelJS para ler e gerar arquivos `.xlsx` preservando melhor abas, estilos básicos, larguras e células mescladas.
-- SheetJS como fallback e para leitura de arquivos `.xls`.
-
-## Como usar
-
-1. Abra `index.html`.
-2. Arraste a planilha para a área de upload ou clique para selecionar um arquivo `.xlsx` ou `.xls`.
-3. Confira o nome do arquivo carregado.
-4. Clique em `Processar planilha`.
-5. Veja o resumo, os alertas e a prévia das primeiras 20 linhas.
-6. Clique em `Baixar planilha final`.
-
-O arquivo final será gerado com o nome:
-
-```text
-Relatorio_Jornadas_Sem_Segundos.xlsx
-```
 
 ## O que é alterado
 
